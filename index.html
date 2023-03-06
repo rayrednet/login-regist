@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login & Regist Form</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon (1).ico">
+
+</head>
+<!DOCTYPE html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+			<form>
+			  <label for="chk" aria-hidden="true">Sign up</label>
+			  <input type="text" name="txt" placeholder="Username" pattern="^[a-zA-Z0-9_-]{4,16}$" 
+					 title="Username must be 4-16 characters and can only contain letters, numbers, underscores, and hyphens" required>
+			  <input type="email" name="email" placeholder="Email" required="">
+			  <input type="password" name="pswd" id="password" placeholder="Password" pattern="^[a-zA-Z0-9]{6,12}$" 
+			  title="Password must be 6-12 characters and alphanumeric" required="">
+			  <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password"/>
+			  <button id="signup-button">Sign up</button>
+			</form>
+		  	</div>
+
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Login</button>
+				</form>
+			</div>
+	</div>
+</body>
+<script>
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('confirm-password');
+
+confirmPasswordInput.addEventListener('keyup', function () {
+  if (passwordInput.value === confirmPasswordInput.value) {
+    confirmPasswordInput.setCustomValidity('');
+  } else {
+    confirmPasswordInput.setCustomValidity("Password doensn't match");
+  }
+});
+</script>
+</html>
